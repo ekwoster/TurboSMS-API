@@ -20,12 +20,12 @@ class SMS{
     }catch(Exception $e){
 			$client = new SoapClient ('http://turbosms.in.ua/api/wsdl.html'); 
 			$auth = array( 
-				'login' => $login, 
-		        'password' => $pwd 
+				'login' => SMS::$login, 
+		        'password' => SMS::$pwd 
         	); 
         	$res=$client->Auth($auth);
         	$sms = array( 
-        		'sender' => $sender, 
+        		'sender' => SMS::$sender, 
         		'destination' => $r, 
 		        'text' => $m
         	);
